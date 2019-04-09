@@ -5,4 +5,4 @@ home = Blueprint('home', __name__)
 
 @home.route('/')
 def index():
-    return "Application Works"
+    return "Andela Football League"
