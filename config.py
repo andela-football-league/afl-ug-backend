@@ -2,12 +2,15 @@ import os
 
 
 class Config:
-    DEBUG = True
+    DEBUG = os.getenv('DEBUG')
     SECRET_KEY = os.urandom(24)
     TESTING = False
     # DATABASE_URL=postgresql://postgres@localhost:{port}/{dbname}
-    SQLALCHEMY_DATABASE_URI = f"postgresql://{os.getenv('DB_USER')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
-    # os.getenv('DATABASE_URL')
+    DB_USER = os.getenv('DB_USER')
+    DB_HOST = os.getenv('DB_HOST')
+    DB_PORT = os.getenv('DB_PORT')
+    DB_NAME = os.getenv('DB_NAME')
+    SQLALCHEMY_DATABASE_URI = f"postgresql://{DB_USER}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
@@ -16,11 +19,12 @@ class DevelopmentConfig(Config):
 
 
 class TestingConfig(Config):
-    pass
+    TESTING = True
 
 
 class ProductionConfig(Config):
-    pass
+    DEBUG = False
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
 
 
 config = {

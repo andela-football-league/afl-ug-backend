@@ -1,0 +1,18 @@
+{
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+
+  ],
+  "description": "Andela Football League API",
+  "env": {
+    "APP_SETTINGS": "production"
+  },
+  "formation": {
+  },
+  "name": "andela-football-league-ug",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}

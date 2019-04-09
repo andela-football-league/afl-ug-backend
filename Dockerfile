@@ -31,3 +31,4 @@ EXPOSE 5000
 
 # start the app server
 # CMD python manage.py runserver
+# CMD gunicorn manage:app --bind 0.0.0.0:$PORT --reload
