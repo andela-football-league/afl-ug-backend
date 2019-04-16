@@ -6,8 +6,8 @@ from flask_script import Manager, Server, Shell
 from flask_migrate import Migrate, MigrateCommand
 
 from application import create_app, db
-from team import models
-from person import models
+from api.team import models
+from api.person import models
 
 app = create_app(os.getenv('APP_SETTINGS') or 'default')
 migrate = Migrate(app, db)

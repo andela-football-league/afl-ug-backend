@@ -29,8 +29,8 @@ def create_app(config_name):
 
     # import blueprints
     from home.views import home
-    from person.views import person_app
-    from team.views import team_app
+    from api.person.views import person_app
+    from api.team.views import team_app
 
     # register blueprints
     app.register_blueprint(home)
