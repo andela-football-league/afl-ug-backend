@@ -23,7 +23,7 @@ def upgrade():
     sa.Column('permission_name', sa.String(length=50), nullable=False),
     sa.PrimaryKeyConstraint('permission_id')
     )
-    op.drop_table('person_profile')
+    # op.drop_table('person_profile')
     op.add_column('person', sa.Column('position', sa.String(length=50), nullable=True))
     op.alter_column('person', 'team_id',
                existing_type=sa.INTEGER(),
