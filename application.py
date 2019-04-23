@@ -29,10 +29,12 @@ def create_app(config_name):
     from home.views import home
     from api.person.views import person_app
     from api.team.views import team_app
+    from api.permissions import permission_app
 
     # register blueprints
     app.register_blueprint(home)
     app.register_blueprint(team_app)
     app.register_blueprint(person_app)
+    app.register_blueprint(permission_app)
 
     return app
