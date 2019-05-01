@@ -7,7 +7,7 @@ ENV PYTHONUNBUFFERED 1
 # to enable install psycopg2 dependencies
 COPY ./requirements.txt /requirements.txt
 # Installing dependencies using application manager (apk)
-RUN apk add --update --no-cache postgresql-client jpeg-dev
+RUN apk add --update --no-cache postgresql-libs postgresql-client jpeg-dev
 # Installing temp dependencies using application manager(apk)
 RUN apk add --update --no-cache --virtual .tmp-build-deps \
     gcc libc-dev linux-headers postgresql-dev musl-dev zlib zlib-dev

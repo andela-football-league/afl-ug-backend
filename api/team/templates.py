@@ -6,8 +6,8 @@ def team_obj(team):
         "captain": team.captain,
         "links": [
             {"rel": "self", "href": f"/teams/{team.team_id}"},
-            {"rel": "players", "href": f"/teams/{team.team_id}/players"}
-        ]
+            {"rel": "players", "href": f"/teams/{team.team_id}/players"},
+        ],
     }
 
 
