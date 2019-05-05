@@ -17,7 +17,10 @@ services:
       - DB_PASS=$DB_PASS
       - DB_PORT=$DB_PORT
       - DEBUG=$DEBUG
+      - TEST_DB_HOST=test_db
+      - TEST_DB_NAME=$TEST_DB_NAME
       - APP_SETTINGS=$APP_SETTINGS
+      - USER_TOKEN=$USER_TOKEN
     depends_on:
       - db
   
@@ -25,5 +28,12 @@ services:
     image: postgres:10-alpine
     environment:
       - POSTGRES_DB=$DB_NAME
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASS
+  
+  test_db:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_DB=$TEST_DB_NAME
       - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASS
