@@ -11,6 +11,7 @@ from application import create_app, db
 from api.team import models
 from api.person import models
 from api.permissions import models
+from api.roles import models
 
 app = create_app(os.getenv("APP_SETTINGS") or "default")
 migrate = Migrate(app, db)

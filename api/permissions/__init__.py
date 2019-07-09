@@ -1,1 +1,1 @@
-from .views import permission_app
+# from .views import permission_app

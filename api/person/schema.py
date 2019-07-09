@@ -10,7 +10,7 @@ class PersonSchema(Schema):
         error_messages={"required": {"message": "First name required", "code": 400}},
     )
     last_name = fields.Str(required=True, validate=validate.Length(3))
-    role = fields.Str(missing="")
+    role = fields.Int()
     position = fields.Str(missing="")
     team_id = fields.Int()
 
