@@ -10,6 +10,7 @@ from flask_migrate import Migrate, MigrateCommand
 from application import create_app, db
 from api.team import models
 from api.person import models
+from api.permissions import models
 
 app = create_app(os.getenv("APP_SETTINGS") or "default")
 migrate = Migrate(app, db)
