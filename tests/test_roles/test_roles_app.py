@@ -14,7 +14,6 @@ class TestRolesApp(BaseTestCase):
         role_ = json.dumps({"role_name": "Admin", "permission_id": permission_id})
         res2 = self.app.post("/roles/", headers=self.token_headers(), data=role_) if not role else None
 
-
         return role_ if role else self.app.get("/roles/")
 
 

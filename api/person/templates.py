@@ -3,7 +3,7 @@ def person_obj(person):
         "person_id": person.person_id,
         "first_name": person.first_name,
         "last_name": person.last_name,
-        "name": person.name,
+        "nick_name": person.nick_name,
         "email": person.email,
         "picture": person.picture,
         "role": person.role,

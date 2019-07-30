@@ -6,7 +6,7 @@ class Person(db.Model, DatabaseUtils):
     person_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
-    name = db.Column(db.String(50), nullable=False)
+    nick_name = db.Column(db.String(50), nullable=True)
     email = db.Column(db.String(50), nullable=False)
     role = db.Column(db.Integer, nullable=True)
     picture = db.Column(db.String(255), nullable=True)
