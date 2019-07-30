@@ -2,6 +2,8 @@ import unittest
 import os
 
 from application import create_app as create_app_base, db
+from api.person.models import Person
+from api.team.models import Team
 
 
 class BaseTestCase(unittest.TestCase):
@@ -11,10 +13,30 @@ class BaseTestCase(unittest.TestCase):
     def setUp(self):
         self.app_factory = self.create_app()
         self.app = self.app_factory.test_client()
+        person =  Person(
+            **{
+                "first_name": 'xr',
+                "last_name": 'cd',
+                "nick_name": "ttr",
+                "email": "cedriclusiba@andela.com",
+                "role": 1,
+                "active": True,
+                "team_id": 1
+            }
+        )
+
+        team = Team(
+            **{
+                "team_id": 1,
+                "name": "zaweze"
+            }
+        )
 
         with self.app_factory.app_context():
             # create all the db tables
             db.create_all()
+            team.save()
+            person.save()
             db.session.commit()
 
     def tearDown(self):

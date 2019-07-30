@@ -23,3 +23,4 @@ class TestRegisterLogin(BaseTestCase):
         res = self.app.post("/register_login/", headers=headers)
         self.assertEqual(res.status_code, 401)
         self.assertIn("Invalid token, please provide a valid token", str(res.data))
+
